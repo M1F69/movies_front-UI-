@@ -1,7 +1,7 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {CardElementComponent} from "../card-element/card-element.component";
 import {NgForOf} from "@angular/common";
-import {MoveEntity} from "../../components/move-list/move-list.component";
+import {MoveEntity} from "../../Entities/entity";
 
 @Component({
   selector: 'list',
@@ -11,8 +11,11 @@ import {MoveEntity} from "../../components/move-list/move-list.component";
     NgForOf
   ],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.css'
+  host: {
+    class: 'block w-full h-full',
+  },
+  encapsulation: ViewEncapsulation.None
 })
 export class ListComponent {
-  @Input() moveArray:MoveEntity[]|null=null;
+  @Input() declare moveArray:MoveEntity[]
 }

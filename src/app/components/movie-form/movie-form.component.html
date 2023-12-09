@@ -1,0 +1,40 @@
+<div class='flex flex-col h-full w-[500px] text-xs bg-lime-300'>
+
+
+  <form class='px-5 py-5 flex flex-col space-y-3' [formGroup]="formGroup">
+    <div class="flex flex-row justify-between"><div>
+      <form-element title='name' [requiredField]='true'>
+        <input formControlName='name'/>
+      </form-element>
+      <form-element title='description' [requiredField]='true'>
+        <input formControlName='description'/>
+      </form-element>
+      <form-element title='year' [requiredField]='true'>
+        <input formControlName='year'/>
+      </form-element>
+      <form-element title='type' [requiredField]='true'>
+        <select formControlName='type'>
+          <option value="0">Film</option>
+          <option value="1">Anime</option>
+          <option value="2">Serial</option>
+        </select>
+      </form-element>
+    </div>
+      <div>
+        <form-element title='photo' [requiredField]='true'>
+          <input (change)="func($event)" formControlName='photo' type="file" accept="image/png, image/jpeg "/>
+        </form-element>
+      </div>
+    </div>
+
+  </form>
+
+
+  <div class='px-5 pb-5 mt-5 flex justify-between'>
+    <div class='flex items-center space-x-2'>
+      <button (click)='handleCancelClick()'>Отмена</button>
+      <button (click)='handleConfirmClick()'>Сохранить</button>
+    </div>
+  </div>
+
+</div>

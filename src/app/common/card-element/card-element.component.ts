@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {MoveEntity} from "../../components/move-list/move-list.component";
+import {Component, EventEmitter, inject, Input, OnInit, Output} from '@angular/core';
+import {MoveEntity} from "../../Entities/entity";
+import {AppService} from "../../app.service";
 
 @Component({
   selector: 'card-element',
@@ -11,6 +12,13 @@ import {MoveEntity} from "../../components/move-list/move-list.component";
   }
 })
 export class CardElementComponent {
-@Input() item: MoveEntity|null=null
+  protected readonly appService= inject(AppService)
+@Input() declare item: MoveEntity
 
+
+  protected pushCurrent() {
+    this.appService.currentMovie$.next(this.item)
+    console.log("current change", this.item)
+
+  }
 }
