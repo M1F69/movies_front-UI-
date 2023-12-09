@@ -17,16 +17,14 @@ import {AppService} from "../../app.service";
   }
 })
 export class MoveListComponent {
-protected readonly http = inject(HttpClient);
-protected  movies:MoveEntity[] =[];
+  protected readonly http = inject(HttpClient);
+  protected movies: MoveEntity[] = [];
 
 
-
-constructor() {
-  this.http.get<{value: MoveEntity[] }>("/api/Movies/").subscribe((moviesARR) =>{
-    this.movies=moviesARR.value;
-  console.log(this.movies)
-  })
-}
+  constructor() {
+    this.http.get<{ value: MoveEntity[] }>("/api/movies/").subscribe(({ value }) => {
+      this.movies = value;
+    })
+  }
 }
 

@@ -1,13 +1,16 @@
 import {Component, inject, Injector} from '@angular/core';
 import {DialogModule, DialogService} from "../../common/dialog/src";
-import {FormElementComponent} from "../../common/form-element/form-element.component";
 import {MovieFormComponent} from "../movie-form/movie-form.component";
 import {AppService} from "../../app.service";
 import {AsyncPipe, NgIf} from "@angular/common";
-import {async} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {MoveEntity} from "../../Entities/entity";
+import {filter, OperatorFunction} from "rxjs";
 
+export function filterNil<T>(): OperatorFunction<T, NonNullable<T>> {
+  return filter(
+    (value: T): value is NonNullable<T> => value !== null && value !== undefined
+  );
+}
 
 @Component({
   selector: 'move-content',
@@ -21,21 +24,38 @@ import {MoveEntity} from "../../Entities/entity";
 })
 export class MoveContentComponent {
   protected readonly dialogService = inject(DialogService);
-  protected readonly injector= inject(Injector);
+  protected readonly injector = inject(Injector);
 
   protected readonly appService = inject(AppService);
-      protected readonly http = inject(HttpClient);
+  protected readonly http = inject(HttpClient);
+
+  protected href: string | null = null;
+  protected cache = new Map<string, string>();
 
   funcOpenForm() {
     this.dialogService.show(MovieFormComponent, {injector: this.injector})
   }
 
-constructor() {
-    this.appService.currentMovie$.subscribe(
-      (current)=>{
+  constructor() {
+    this.appService.currentMovie$.pipe(
+      filterNil()
+    ).subscribe(
+      (value) => {
+        let href = this.cache.get(value.id)
+
+        if(href) {
+          this.href = href;
+          return;
+        }
 
 
-        this.http.get(`/api/Movies/${current?.id}/download`, {responseType: "blob"}).subscribe((pic)=>{console.log(pic)})
+        this.http.get(
+          `/api/movies(${value.id})/download`,
+          { responseType: 'blob' }
+        ).subscribe((blob) => {
+          href = URL.createObjectURL(blob);
+          this.cache.set(value.id, (this.href = href))
+        })
       }
     )
 
