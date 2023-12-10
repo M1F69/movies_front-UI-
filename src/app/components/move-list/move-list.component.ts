@@ -11,7 +11,6 @@ import {AppService} from "../../app.service";
     ListComponent
   ],
   templateUrl: './move-list.component.html',
-  styleUrl: './move-list.component.css',
   host: {
     class: 'flex w-[360px] border-r border-r-[#dfdfdf] bg-red-200'
   }

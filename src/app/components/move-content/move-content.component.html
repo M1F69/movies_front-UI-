@@ -1,17 +1,17 @@
 <div class="flex w-1 h-1">
 <button class="bg-emerald-950" (click)="funcOpenForm()">CLICK</button>
-</div>
 
 <span>
   Про фильм:
 </span>
 
-<ng-container *ngIf="appService.currentMovie$ | async; let movie">
-  <div>
-    {{movie.id}}
-  </div>
+<!--<ng-container *ngIf="appService.currentMovie$ | async; let movie">-->
+<!--  <div>-->
+<!--    {{movie.id}}-->
+<!--  </div>-->
 
   <img [src]="href" alt="*"/>
 
-</ng-container>
+</div>
+<!--</ng-container>-->
 

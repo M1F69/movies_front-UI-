@@ -10,7 +10,6 @@ import {MoveContentComponent} from "../move-content/move-content.component";
     MoveContentComponent
   ],
   templateUrl: './move-space.component.html',
-  styleUrl: './move-space.component.css',
   host: {
     class: 'h-full w-full',
   },

@@ -6,6 +6,7 @@ import {TypeMoveEntity} from "../../Entities/entity";
 import {DialogRef} from '../../common/dialog/src/lib/dialog-ref';
 import {HttpClient} from "@angular/common/http";
 import {log} from "@angular-devkit/build-angular/src/builders/ssr-dev-server";
+import {ButtonModule} from "../../common/button/src";
 
 const omitNil = (target: any): any =>
   Object.fromEntries(
@@ -17,7 +18,8 @@ const omitNil = (target: any): any =>
   standalone: true,
   imports: [
     FormElementComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ButtonModule
   ],
   templateUrl: './movie-form.component.html',
 })

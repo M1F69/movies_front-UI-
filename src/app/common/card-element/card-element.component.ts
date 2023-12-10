@@ -7,7 +7,6 @@ import {AppService} from "../../app.service";
   standalone: true,
   imports: [],
   templateUrl: './card-element.component.html',
-  styleUrl: './card-element.component.css',
   host: {
   }
 })

@@ -5,7 +5,6 @@ import {Component, EventEmitter, Input, Output, TemplateRef} from '@angular/core
   standalone: true,
   imports: [],
   templateUrl: './form-element.component.html',
-  styleUrl: './form-element.component.css'
 })
 export class FormElementComponent {
   @Input() public controlTemplate!: TemplateRef<any>;
