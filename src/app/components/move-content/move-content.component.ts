@@ -6,8 +6,7 @@ import {AsyncPipe, NgIf} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
 import {filter, OperatorFunction} from "rxjs";
 import {NotificationFormComponent} from "../notification-form/notification-form.component";
-import {data} from "autoprefixer";
-import {MoveEntity} from "../../Entities/entity";
+
 
 export function filterNil<T>(): OperatorFunction<T, NonNullable<T>> {
   return filter(
