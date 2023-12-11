@@ -12,7 +12,7 @@ import {AppService} from "../../app.service";
   ],
   templateUrl: './move-list.component.html',
   host: {
-    class: 'flex w-[360px] border-r border-r-[#dfdfdf] bg-red-200'
+    class: 'flex w-[360px] border-r border-r-lime-800 bg-lime-100'
   }
 })
 export class MoveListComponent {

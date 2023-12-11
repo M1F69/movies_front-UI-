@@ -19,7 +19,7 @@ export function filterNil<T>(): OperatorFunction<T, NonNullable<T>> {
   imports: [MovieFormComponent, NgIf, AsyncPipe],
   templateUrl: './move-content.component.html',
   host: {
-    class: 'flex flex-1 bg-cyan-200',
+    class: 'flex flex-1 bg-lime-100',
   },
 })
 export class MoveContentComponent {

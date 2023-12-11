@@ -1,0 +1,41 @@
+
+button {
+  margin: 0;
+
+  position: relative;
+
+  height: 28px;
+  min-width: 32px;
+
+  font-size: 12px;
+  line-height: 20px;
+
+  width: initial;
+  gap: 6px;
+
+  padding: 4px 8px;
+
+  display: inline-flex;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  white-space: nowrap;
+  color: white;
+
+  outline: none;
+  z-index: auto;
+
+  background-color: #547c0f;
+
+  border-width: 1px;
+  border-style: solid;
+  border-color: #547c0f;
+  border-radius: 4px;
+
+
+}
