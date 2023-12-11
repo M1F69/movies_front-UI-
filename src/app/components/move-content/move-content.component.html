@@ -1,17 +1,23 @@
-<div class="flex w-1 h-1">
-<button class="bg-emerald-950" (click)="funcOpenForm()">CLICK</button>
+<div class="flex flex-col w-full h-full">
+  <div class="flex w-full h-8 bg-lime-300 justify-between align-middle">
+    toolbar
+    <div class="">
+      <button class="w-3" (click)="funcOpenForm()">Добавить фильм</button>
+      <button class="w-3" (click)="funcDeleteFilm()">Удалить фильм</button>
+    </div>
+  </div>
 
-<span>
+  <span>
   Про фильм:
 </span>
 
-<!--<ng-container *ngIf="appService.currentMovie$ | async; let movie">-->
-<!--  <div>-->
-<!--    {{movie.id}}-->
-<!--  </div>-->
+  <ng-container *ngIf="appService.currentMovie$ | async; let movie">
+    <div>
+      {{movie.id}}
+    </div>
 
-<!--  <img [src]="href" alt="*"/>-->
-
+  <img [src]="href" alt="*"/>
+  <a>bla bla red</a>
+</ng-container>
 </div>
-<!--</ng-container>-->
 
