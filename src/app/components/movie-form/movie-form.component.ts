@@ -5,7 +5,6 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {TypeMoveEntity} from "../../Entities/entity";
 import {DialogRef} from '../../common/dialog/src/lib/dialog-ref';
 import {HttpClient} from "@angular/common/http";
-import {ButtonModule} from "../../common/button/src";
 
 const omitNil = (target: any): any =>
   Object.fromEntries(
@@ -18,7 +17,6 @@ const omitNil = (target: any): any =>
   imports: [
     FormElementComponent,
     ReactiveFormsModule,
-    ButtonModule
   ],
   templateUrl: './movie-form.component.html',
   styleUrl: '../../style/button.scss'
