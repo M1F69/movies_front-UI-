@@ -6,12 +6,11 @@
       <form-element title='name' [requiredField]='true'>
         <input formControlName='name'/>
       </form-element>
-      <form-element title='description' [requiredField]='true'>
-        <input formControlName='description'/>
-      </form-element>
+
       <form-element title='year' [requiredField]='true'>
         <input formControlName='year'/>
       </form-element>
+
       <form-element title='type' [requiredField]='true'>
         <select formControlName='type'>
           <option value="0">Film</option>
@@ -19,6 +18,12 @@
           <option value="2">Serial</option>
         </select>
       </form-element>
+
+<!--TODO: сделай инпут для описания больше-->
+      <form-element  title='description' [requiredField]='true'>
+        <input formControlName='description'/>
+      </form-element>
+
     </div>
       <div>
         <form-element title='photo' [requiredField]='true'>

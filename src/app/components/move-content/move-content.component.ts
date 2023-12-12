@@ -71,8 +71,8 @@ export class MoveContentComponent {
             break
           case 'Confirm':
             const current = this.appService.currentMovie$.value
-            this.http.delete(`/api/movies(${current?.id})/`).subscribe(x=>console.log(x))
-          //   del func
+            this.http.delete(`/api/movies(${current?.id})/`).subscribe(()=>{this.appService.loadMovies()})
+
             break
 
           }

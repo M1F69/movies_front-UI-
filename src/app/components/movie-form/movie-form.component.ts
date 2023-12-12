@@ -5,6 +5,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/
 import {TypeMoveEntity} from "../../Entities/entity";
 import {DialogRef} from '../../common/dialog/src/lib/dialog-ref';
 import {HttpClient} from "@angular/common/http";
+import {AppService} from "../../app.service";
 
 const omitNil = (target: any): any =>
   Object.fromEntries(
@@ -24,6 +25,7 @@ const omitNil = (target: any): any =>
 export class MovieFormComponent {
   protected readonly dialogRef = inject(DialogRef);
   protected readonly http = inject(HttpClient);
+  protected readonly appService = inject(AppService);
   protected  photoRef: File | undefined =  undefined;
 
 
@@ -54,7 +56,9 @@ export class MovieFormComponent {
     this.photoRef&&
     ZZZ.append("files", this.photoRef)
     console.log(XXX)
-    this.http.post("/api/Movies/", ZZZ).subscribe((x) => console.log(x))
+    this.http.post("/api/Movies/", ZZZ).subscribe(() => {
+      this.appService.loadMovies()
+      this.dialogRef.close();})
   }
 
   func($event: Event) {

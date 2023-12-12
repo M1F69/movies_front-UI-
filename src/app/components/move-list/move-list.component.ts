@@ -12,18 +12,19 @@ import {AppService} from "../../app.service";
   ],
   templateUrl: './move-list.component.html',
   host: {
-    class: 'flex w-[360px] border-r border-r-lime-800 bg-lime-100'
+    class: 'flex w-[360px] border-r border-r-lime-400 bg-lime-100'
   }
 })
 export class MoveListComponent {
   protected readonly http = inject(HttpClient);
-  protected movies: MoveEntity[] = [];
+  protected readonly appService = inject(AppService);
+
 
 
   constructor() {
-    this.http.get<{ value: MoveEntity[] }>("/api/movies/").subscribe(({ value }) => {
-      this.movies = value;
-    })
+    this.appService.loadMovies()
   }
+
+
 }
 

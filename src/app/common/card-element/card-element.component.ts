@@ -8,6 +8,7 @@ import {AppService} from "../../app.service";
   imports: [],
   templateUrl: './card-element.component.html',
   host: {
+    class: ""
   }
 })
 export class CardElementComponent {
