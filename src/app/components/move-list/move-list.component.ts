@@ -1,18 +1,19 @@
 import {Component, inject} from '@angular/core';
 import {ListComponent} from "../../common/list/list.component";
-import {MoveEntity} from "../../Entities/entity";
 import {HttpClient} from "@angular/common/http";
 import {AppService} from "../../app.service";
+import {ToolbarModule} from "../../common/toolbar/src";
 
 @Component({
   selector: 'move-list',
   standalone: true,
   imports: [
-    ListComponent
+    ListComponent,
+    ToolbarModule
   ],
   templateUrl: './move-list.component.html',
   host: {
-    class: 'flex w-[360px] border-r border-r-lime-400 bg-lime-100'
+    class: 'flex flex-col w-[360px]  bg-lime-100'
   }
 })
 export class MoveListComponent {

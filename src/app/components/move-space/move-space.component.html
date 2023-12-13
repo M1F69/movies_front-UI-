@@ -1,7 +1,16 @@
-<div class='flex h-full w-full '>
-  <move-list/>
-  <move-content/>
-</div>
+
+<ng-template [ngIf]="content" [ngIfElse]="fon">
+  <div class='flex h-full w-full '>
+    <move-list/>
+    <move-content/>
+  </div>
+</ng-template>
+
+<ng-template #fon>
+  <div class='flex h-full w-full bg-lime-200 '>
+  </div>
+</ng-template>
+
 
 
 

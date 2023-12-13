@@ -13,6 +13,7 @@ import {MoveEntity} from "../../Entities/entity";
   templateUrl: './list.component.html',
   host: {
     class: 'block w-full h-full',
+    style: 'display: flex'
   },
   encapsulation: ViewEncapsulation.None
 })

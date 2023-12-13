@@ -6,6 +6,7 @@ import {AsyncPipe, NgIf} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
 import {filter, OperatorFunction} from "rxjs";
 import {NotificationFormComponent} from "../notification-form/notification-form.component";
+import {ToolbarModule} from "../../common/toolbar/src";
 
 
 export function filterNil<T>(): OperatorFunction<T, NonNullable<T>> {
@@ -18,9 +19,9 @@ export function filterNil<T>(): OperatorFunction<T, NonNullable<T>> {
   selector: 'move-content',
   standalone: true,
   providers: [DialogModule, DialogService],
-  imports: [MovieFormComponent, NgIf, AsyncPipe],
+  imports: [MovieFormComponent, NgIf, AsyncPipe, ToolbarModule],
   templateUrl: './move-content.component.html',
-  styleUrls: ["../../style/button.scss", './move-content.scss'],
+  styleUrls: ["../../style/ui/button.scss","../../style/ui/spin.scss", '../../style/ui/move-content.scss'],
   host: {
     class: 'flex flex-1 bg-lime-100',
   },

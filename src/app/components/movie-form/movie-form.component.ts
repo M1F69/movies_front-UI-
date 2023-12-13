@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
 import {FormElementComponent} from "../../common/form-element/form-element.component";
 
-import {FormControl, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
+import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {TypeMoveEntity} from "../../Entities/entity";
 import {DialogRef} from '../../common/dialog/src/lib/dialog-ref';
 import {HttpClient} from "@angular/common/http";
@@ -20,7 +20,7 @@ const omitNil = (target: any): any =>
     ReactiveFormsModule,
   ],
   templateUrl: './movie-form.component.html',
-  styleUrl: '../../style/button.scss'
+  styleUrl: '../../style/ui/button.scss'
 })
 export class MovieFormComponent {
   protected readonly dialogRef = inject(DialogRef);

@@ -1,0 +1,25 @@
+
+.toolbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+@apply border-b-lime-400  bg-lime-200 text-lime-800;
+
+  &-md {
+    height: 3rem;
+    min-height: 3rem;
+  }
+
+  &-sm {
+    height: 2.5rem;
+    min-height: 2.5rem;
+  }
+
+
+
+
+}

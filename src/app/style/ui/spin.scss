@@ -1,0 +1,18 @@
+.v-spin {
+  @apply block relative h-full w-full;
+
+  .v-spin-backdrop {
+    background-color: rgba(233, 236, 239, 0.55);
+    backdrop-filter: blur(0.1875rem);
+  }
+
+  .v-spin-container {
+    display: none;
+    @apply top-0 left-0;
+  }
+
+  .v-spin-container svg {
+    @apply h-8 w-8 animate-spin ;
+    //fill-blue-600;
+  }
+}

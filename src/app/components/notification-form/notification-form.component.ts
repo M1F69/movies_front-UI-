@@ -11,7 +11,7 @@ import {DialogRef} from "../../common/dialog/src";
     ReactiveFormsModule
   ],
   templateUrl: './notification-form.component.html',
-  styleUrls: ['./notification-form.component.css', "../../style/button.scss"]
+  styleUrls: ['./notification-form.component.css', "../../style/ui/button.scss"]
 })
 export class NotificationFormComponent {
   protected readonly dialogRef = inject(DialogRef);
