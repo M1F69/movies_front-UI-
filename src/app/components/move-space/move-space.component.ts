@@ -6,6 +6,7 @@ import {MovieFormComponent} from "../movie-form/movie-form.component";
 import {DialogModule, DialogService} from "../../common/dialog/src";
 import {LoginFormComponent} from "../login-form/login-form.component";
 import {NgIf} from "@angular/common";
+import {HomeComponent} from "../home/home.component";
 
 @Component({
   selector: 'move-space',
@@ -14,7 +15,8 @@ import {NgIf} from "@angular/common";
     MoveListComponent,
     MoveContentComponent,
     Spin2Module,
-    NgIf
+    NgIf,
+    HomeComponent
   ],
   providers: [DialogModule, DialogService],
 
@@ -27,7 +29,7 @@ export class MoveSpaceComponent {
 
   protected readonly dialogService = inject(DialogService);
   protected readonly injector = inject(Injector);
-protected content:boolean =false
+protected content:boolean =true
 
   openFormLogin() {
     this.dialogService.show(LoginFormComponent, {injector: this.injector}).afterClose.subscribe((x:boolean)=>{
@@ -35,6 +37,6 @@ protected content:boolean =false
     })
   }
   constructor() {
-    this.openFormLogin()
+    // this.openFormLogin()
   }
 }

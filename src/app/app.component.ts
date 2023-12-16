@@ -10,7 +10,7 @@ import {MoveSpaceComponent} from "./components/move-space/move-space.component";
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   host: {
-    class: "flex 'h-full w-full"
+    class: "flex flex-col h-full w-full "
   }
 })
 export class AppComponent {

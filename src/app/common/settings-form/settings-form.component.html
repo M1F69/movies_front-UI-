@@ -1,0 +1,60 @@
+<div class="flex flex-col items-center w-[500px] h-[500px] text-xs bg-lime-300">
+        <span class='text-xl  '>
+          Настройки
+        </span>
+  <div class=' flex flex-col items-start justify-between text-xs text-lime-800 '>
+
+    <div
+      class='flex flex-row cursor-default flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line gap-3'>
+        <span class='text-xl  '>
+          Главный экран:
+        </span>
+      <div class="flex flex-col text-sm"> Выберите отображаемые категории :
+        <form [formGroup]="formGroup">
+          1 <select formControlName='category1' >
+          <ng-container  [ngTemplateOutlet]="chooseGenre">
+          </ng-container>
+        </select>
+          2 <select formControlName='category2'>
+          <ng-container [ngTemplateOutlet]="chooseGenre">
+          </ng-container>
+        </select>
+          3 <select formControlName='category3'>
+          <ng-container [ngTemplateOutlet]="chooseGenre">
+          </ng-container>
+        </select>
+        </form>
+      </div>
+    </div>
+    <div
+      class='cursor-default min-h-4 flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line'>
+        <span class='text-xl  '>
+          Аккаунт
+        </span>
+    </div>
+    <div
+      class='cursor-default min-h-4 flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line'>
+        <span class='text-xl  '>
+          Цветовая тема
+        </span>
+    </div>
+
+
+    <button class="light" (click)='handleCancelClick()'>Применить</button>
+  </div>
+</div>
+
+
+<ng-template #chooseGenre>
+  <option value="0">фантастика</option>
+  <option value="1">ужасы</option>
+  <option value="2">семейный</option>
+  <option value="3">мюзикл</option>
+  <option value="4">криминал</option>
+  <option value="5">мелодрама</option>
+  <option value="6">комедия</option>
+  <option value="7">документальный</option>
+  <option value="8">боевик</option>
+  <option value="9">военный</option>
+  <option value="10">детектив</option>
+</ng-template>

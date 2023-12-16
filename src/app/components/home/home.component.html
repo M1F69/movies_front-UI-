@@ -1,0 +1,30 @@
+<div class="flex flex-col w-full h-full text-xl">
+
+<div class="flex w-full h-[10vh] bg-lime-300 justify-between ">
+  <span>USER Добро пожаловать в твой кинотеатр</span>
+  <div class="bg-lime-400 hover:border-2 hover:border-lime-800 " (click)="openSettingsPanel()"> Панель настроек</div>
+
+</div>
+
+<div class="flex w-full h-[80vh] bg-lime-200 gap-3 justify-between">
+
+  <genre-card title="Все ваши фильмы" imgUrl="../../../assets/personal.jpg"/>
+
+  <ng-container *ngFor="let item of this.appService.Categories$.value ">
+ <genre-card [title]='item.title' [imgUrl]="item.url"/>
+  </ng-container>
+</div>
+
+  <div class="flex w-full h-[10vh] bg-lime-300">3</div>
+
+</div>
+
+<!--<img src="../../../assets/personal.jpg" height="654" width="563"/>-->
+<!--<img src="../../../assets/comedy.jpg" />-->
+<!--<img src="../../../assets/crime.jpg" />-->
+<!--<img  src="../../../assets/detective.jpg" />-->
+<!--<img src="../../../assets/fantastic.jpg" />-->
+<!--<img src="../../../assets/horror.jpg" />-->
+<!--<img src="../../../assets/melodrama.jpg" />-->
+<!--<img src="../../../assets/military.jpg" />-->
+<!--<img src="../../../assets/musical.jpg" />-->

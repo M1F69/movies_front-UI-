@@ -3,6 +3,7 @@ import {FormElementComponent} from "../../common/form-element/form-element.compo
 
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import {TypeMoveEntity} from "../../Entities/entity";
+
 import {DialogRef} from '../../common/dialog/src/lib/dialog-ref';
 import {HttpClient} from "@angular/common/http";
 import {AppService} from "../../app.service";

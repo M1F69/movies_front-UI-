@@ -5,8 +5,8 @@ import {AppService} from "../../app.service";
 import {AsyncPipe, NgIf} from "@angular/common";
 import {HttpClient} from "@angular/common/http";
 import {filter, OperatorFunction} from "rxjs";
-import {NotificationFormComponent} from "../notification-form/notification-form.component";
 import {ToolbarModule} from "../../common/toolbar/src";
+import {NotificationFormComponent} from "../../common/notification-form/notification-form.component";
 
 
 export function filterNil<T>(): OperatorFunction<T, NonNullable<T>> {

@@ -1,7 +1,7 @@
 import {Component, inject} from '@angular/core';
-import {FormElementComponent} from "../../common/form-element/form-element.component";
+import {FormElementComponent} from "../form-element/form-element.component";
 import {ReactiveFormsModule} from "@angular/forms";
-import {DialogRef} from "../../common/dialog/src";
+import {DialogRef} from "../dialog/src";
 
 @Component({
   selector: 'app-notification-form',
