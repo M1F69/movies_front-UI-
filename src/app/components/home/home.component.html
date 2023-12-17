@@ -8,10 +8,10 @@
 
 <div class="flex w-full h-[80vh] bg-lime-200 gap-3 justify-between">
 
-  <genre-card title="Все ваши фильмы" imgUrl="../../../assets/personal.jpg"/>
+  <genre-card title="Все ваши фильмы" imgUrl="assets/personal.jpg"/>
 
-  <ng-container *ngFor="let item of this.appService.Categories$.value ">
- <genre-card [title]='item.title' [imgUrl]="item.url"/>
+  <ng-container *ngFor="let item of this.appService.Categories$.value " >
+ <genre-card [title]='item.title' [imgUrl]="item.url" (click)="openList(item.index)"/>
   </ng-container>
 </div>
 

@@ -8,6 +8,7 @@ import {DialogService} from "../../common/dialog/src";
 import {CatalogType} from "../../Entities/entity";
 import {AppService} from "../../app.service";
 import {CardElementComponent} from "../../common/card-element/card-element.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'home',
@@ -30,13 +31,21 @@ export class HomeComponent {
   protected readonly dialogService = inject(DialogService);
   protected readonly injector = inject(Injector);
   protected readonly appService = inject(AppService);
-
+  protected readonly router = inject(Router);
 
   openSettingsPanel() {
-    this.dialogService.show(   SettingsFormComponent, {injector: this.injector})
+    const dataCategories =this.appService.Categories$.value;
+    this.dialogService.show(   SettingsFormComponent, {injector: this.injector, data:{ dataCategories }})
   }
 
   constructor() {
+  }
+
+  openList(index: number) {
+    console.log(index);
+    this.router.navigate(['list'])
+
+    //routing to list
   }
 }
 
