@@ -7,6 +7,7 @@ import {TypeMoveEntity} from "../../Entities/entity";
 import {DialogRef} from '../../common/dialog/src/lib/dialog-ref';
 import {HttpClient} from "@angular/common/http";
 import {AppService} from "../../app.service";
+import {Router} from "@angular/router";
 
 const omitNil = (target: any): any =>
   Object.fromEntries(
@@ -39,6 +40,7 @@ export class MovieFormComponent {
   })
 
   public handleCancelClick() {
+
     this.dialogRef.close();
   }
 

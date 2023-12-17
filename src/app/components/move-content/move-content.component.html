@@ -1,10 +1,12 @@
 <div class="flex flex-col w-full h-full text-xl">
 
   <toolbar class="border-r border-r-lime-400">
-    <div class="flex w-full h-10 justify-between align-middle">
+    <div class="flex w-full h-10  align-middle">
       {{ appService.currentMovie$.value?.name }}
     </div>
+
     <div class="flex flex-row gap-3.5">
+      <button class="w-3" (click)="funcGoHome()">На домашний экран</button>
       <button class="w-3" (click)="funcOpenForm()">Добавить фильм</button>
       <button class="w-3" (click)="funcDeleteFilm()">Удалить фильм</button>
     </div>

@@ -13,6 +13,7 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'home',
   standalone: true,
+  providers:[DialogService],
   imports: [
     AsyncPipe,
     NgIf,
@@ -43,6 +44,7 @@ export class HomeComponent {
 
   openList(index: number) {
     console.log(index);
+
     this.router.navigate(['list'])
 
     //routing to list

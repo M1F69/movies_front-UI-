@@ -10,47 +10,47 @@ export class AppService  {
   public catalog:CatalogType[] = [
     {index: 0,
       title: 'Фантастика',
-      url: '../../../assets/fantastic.jpg'
+      url: 'assets/fantastic.jpg'
     },
     {index: 1,
       title: 'Ужасы',
-      url: '../../../assets/horror.jpg'
+      url: 'assets/horror.jpg'
     },
     {index: 2,
       title: 'Семейный',
-      url: '../../../assets/fantastic.jpg'
+      url: 'assets/fantastic.jpg'
     },
     {index: 3,
       title: 'Мюзикл',
-      url: '../../../assets/musical.jpg'
+      url: 'assets/musical.jpg'
     },
     {index: 4,
       title: 'Криминал',
-      url: '../../../assets/crime.jpg'
+      url: 'assets/crime.jpg'
     },
     {index: 5,
       title: 'Мелодрама',
-      url: '../../../assets/melodrama.jpg'
+      url: 'assets/melodrama.jpg'
     },
     {index: 6,
       title: 'Комедия',
-      url: '../../../assets/comedy.jpg'
+      url: 'assets/comedy.jpg'
     },
     {index: 7,
       title: 'Документальный',
-      url: '../../../assets/documental.jpg'
+      url: 'assets/documental.jpg'
     },
     {index: 8,
       title: 'Боевик',
-      url: '../../../assets/actionmovie.jpg'
+      url: 'assets/actionmovie.jpg'
     },
     {index: 9,
       title: 'Военный',
-      url: '../../../assets/military.jpg'
+      url: 'assets/military.jpg'
     },
     {index: 10,
       title: 'Детектив',
-      url: '../../../assets/detective.jpg'
+      url: 'assets/detective.jpg'
     }
   ]
 

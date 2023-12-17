@@ -3,17 +3,21 @@ import {ListComponent} from "../../common/list/list.component";
 import {HttpClient} from "@angular/common/http";
 import {AppService} from "../../app.service";
 import {ToolbarModule} from "../../common/toolbar/src";
+import {GenreCardComponent} from "../../common/genre-card/genre-card.component";
+import {MoveContentComponent} from "../move-content/move-content.component";
 
 @Component({
   selector: 'move-list',
   standalone: true,
   imports: [
     ListComponent,
-    ToolbarModule
+    ToolbarModule,
+    GenreCardComponent,
+    MoveContentComponent
   ],
   templateUrl: './move-list.component.html',
   host: {
-    class: 'flex flex-col w-[360px]  bg-lime-100'
+    class: 'flex h-full w-full '
   }
 })
 export class MoveListComponent {

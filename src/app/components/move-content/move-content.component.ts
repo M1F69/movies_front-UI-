@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 import {filter, OperatorFunction} from "rxjs";
 import {ToolbarModule} from "../../common/toolbar/src";
 import {NotificationFormComponent} from "../../common/notification-form/notification-form.component";
+import {Router} from "@angular/router";
 
 
 export function filterNil<T>(): OperatorFunction<T, NonNullable<T>> {
@@ -34,6 +35,7 @@ export class MoveContentComponent {
   protected readonly http = inject(HttpClient);
 
   protected href: string | null = null;
+  protected readonly router = inject(Router);
   protected cache = new Map<string, string>();
 
   funcOpenForm() {
@@ -79,6 +81,13 @@ export class MoveContentComponent {
           }
       })
 
+
+  }
+
+  funcGoHome() {
+
+
+    this.router.navigate(['home'])
 
   }
 }
