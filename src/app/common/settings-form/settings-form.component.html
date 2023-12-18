@@ -1,48 +1,85 @@
-<div class="flex flex-col items-center w-[500px] h-[500px] text-xs bg-lime-300">
-        <span class='text-xl  '>
-          Настройки
-        </span>
-  <div class=' flex flex-col items-start justify-between text-xs text-lime-800 '>
-
-    <div
-      class='flex flex-row cursor-default flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line gap-3'>
-        <span class='text-xl  '>
-          Главный экран:
-        </span>
-      <div class="flex flex-col text-sm"> Выберите отображаемые категории :
-        <form [formGroup]="formGroup">
-          1 <select formControlName='category1' >
-          <ng-container  [ngTemplateOutlet]="chooseGenre">
-          </ng-container>
-        </select>
-          2 <select formControlName='category2'>
-          <ng-container [ngTemplateOutlet]="chooseGenre">
-          </ng-container>
-        </select>
-          3 <select formControlName='category3'>
-          <ng-container [ngTemplateOutlet]="chooseGenre">
-          </ng-container>
-        </select>
-        </form>
-      </div>
-    </div>
-    <div
-      class='cursor-default min-h-4 flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line'>
-        <span class='text-xl  '>
-          Аккаунт
-        </span>
-    </div>
-    <div
-      class='cursor-default min-h-4 flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line'>
-        <span class='text-xl  '>
-          Цветовая тема
-        </span>
-    </div>
-
-
-    <button class="light" (click)='handleCancelClick()'>Применить</button>
-  </div>
+<div class="flex justify-center items-center pt-5 pb-2">
+  <span>Настройки</span>
 </div>
+<div class="flex flex-col flex-1 space-y-4">
+
+  <div class="px-5 flex justify-between items-start">
+    <div>
+      <span>Главный экран:</span>
+    </div>
+    <div>
+      <form [formGroup]="formGroup" class="flex flex-col space-y-1.5">
+        <select formControlName='category1'>
+          <ng-container [ngTemplateOutlet]="chooseGenre"/>
+        </select>
+        <select formControlName='category2'>
+          <ng-container [ngTemplateOutlet]="chooseGenre"/>
+        </select>
+        <select formControlName='category3'>
+          <ng-container [ngTemplateOutlet]="chooseGenre"/>
+        </select>
+      </form>
+    </div>
+  </div>
+
+  <div class="px-5 flex justify-between items-start">
+    <div>
+      <span>Цветовая тема:</span>
+    </div>
+    <div></div>
+  </div>
+
+</div>
+<div class="px-5 pb-5 pt-2">
+  <button (click)='handleCancelClick()' class="light">Применить</button>
+</div>
+
+
+<!--<div class="flex flex-col items-center w-[500px] h-[500px] text-xs bg-lime-300">-->
+<!--        <span class='text-xl  '>-->
+<!--          Настройки-->
+<!--        </span>-->
+<!--  <div class=' flex flex-col items-start justify-between text-xs text-lime-800 '>-->
+
+<!--    <div-->
+<!--      class='flex flex-row cursor-default items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line gap-3'>-->
+<!--        <span class='text-xl  '>-->
+<!--          Главный экран:-->
+<!--        </span>-->
+<!--      <div class="flex flex-col text-sm"> Выберите отображаемые категории :-->
+<!--        <form [formGroup]="formGroup">-->
+<!--          1 <select formControlName='category1' >-->
+<!--          <ng-container  [ngTemplateOutlet]="chooseGenre">-->
+<!--          </ng-container>-->
+<!--        </select>-->
+<!--          2 <select formControlName='category2'>-->
+<!--          <ng-container [ngTemplateOutlet]="chooseGenre">-->
+<!--          </ng-container>-->
+<!--        </select>-->
+<!--          3 <select formControlName='category3'>-->
+<!--          <ng-container [ngTemplateOutlet]="chooseGenre">-->
+<!--          </ng-container>-->
+<!--        </select>-->
+<!--        </form>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div-->
+<!--      class='cursor-default min-h-4 flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line'>-->
+<!--        <span class='text-xl  '>-->
+<!--          Аккаунт-->
+<!--        </span>-->
+<!--    </div>-->
+<!--    <div-->
+<!--      class='cursor-default min-h-4 flex items-center justify-self-start text-xs text-lime-800 mb-2 whitespace-pre-line'>-->
+<!--        <span class='text-xl  '>-->
+<!--          Цветовая тема-->
+<!--        </span>-->
+<!--    </div>-->
+
+
+<!--    -->
+<!--  </div>-->
+<!--</div>-->
 
 
 <ng-template #chooseGenre>

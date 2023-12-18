@@ -1,10 +1,9 @@
-import {Component, inject, Injector, OnInit} from '@angular/core';
+import {Component, inject, OnInit} from '@angular/core';
 import {DialogModule, DialogService} from "../dialog/src";
 import {DialogRef} from '../../common/dialog/src/lib/dialog-ref';
 import {FormElementComponent} from "../form-element/form-element.component";
 import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NgTemplateOutlet} from "@angular/common";
-import {TypeMoveEntity} from "../../Entities/entity";
 import {AppService} from "../../app.service";
 
 @Component({
@@ -19,7 +18,7 @@ import {AppService} from "../../app.service";
   templateUrl: './settings-form.component.html',
   styleUrl: '../../style/ui/button.scss',
   host: {
-    class: ''
+    class: 'flex flex-col w-[500px] bg-main-color'
   }
 })
 
@@ -46,9 +45,9 @@ export class SettingsFormComponent implements OnInit {
 
   public ngOnInit() {
     this.formGroup.reset({
-      category1:this.dataCategories[0].index,
-      category2:this.dataCategories[1].index,
-      category3:this.dataCategories[2].index,
+      category1: this.dataCategories[0].index,
+      category2: this.dataCategories[1].index,
+      category3: this.dataCategories[2].index,
     })
   }
 

@@ -1,11 +1,9 @@
-
-<ng-template [ngIf]="content" [ngIfElse]="fon">
-  <router-outlet></router-outlet>
-</ng-template>
+<ng-container *ngIf="content; else fon">
+  <router-outlet class="router-grow"></router-outlet>
+</ng-container>
 
 <ng-template #fon>
-  <div class='flex h-full w-full bg-lime-200 '>
-  </div>
+  <div class='flex h-full w-full bg-lime-200'></div>
 </ng-template>
 
 

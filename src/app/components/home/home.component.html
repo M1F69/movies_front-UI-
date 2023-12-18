@@ -1,21 +1,20 @@
-<div class="flex flex-col w-full h-full text-xl">
+<div class="flex-1 flex flex-col text-xl">
 
-<div class="flex w-full h-[10vh] bg-lime-300 justify-between ">
-  <span>USER Добро пожаловать в твой кинотеатр</span>
-  <div class="bg-lime-400 hover:border-2 hover:border-lime-800 " (click)="openSettingsPanel()"> Панель настроек</div>
+  <div class="flex h-10 bg-lime-300 justify-between ">
+    <span>USER Добро пожаловать в твой кинотеатр</span>
+    <div (click)="openSettingsPanel()" class="bg-lime-400 hover:border-2 hover:border-lime-800 "> Панель настроек</div>
+  </div>
 
-</div>
-
-<div class="flex w-full h-[80vh] bg-lime-200 gap-3 justify-between">
-
-  <genre-card title="Все ваши фильмы" imgUrl="assets/personal.jpg"/>
-
-  <ng-container *ngFor="let item of this.appService.Categories$.value " >
- <genre-card [title]='item.title' [imgUrl]="item.url" (click)="openList(item.index)"/>
-  </ng-container>
-</div>
-
-  <div class="flex w-full h-[10vh] bg-lime-300">3</div>
+  <div class="relative flex-1 bg-lime-200">
+    <div class="absolute w-full h-full inset-0 overflow-hidden">
+      <div class="min-w-0 flex flex-row overflow-y-auto space-x-3.5 no-scrollbar">
+        <genre-card imgUrl="assets/personal.jpg" title="Все ваши фильмы"/>
+        <ng-container *ngFor="let item of this.appService.Categories$.value ">
+          <genre-card (click)="openList(item.index)" [imgUrl]="item.url" [title]='item.title'/>
+        </ng-container>
+      </div>
+    </div>
+  </div>
 
 </div>
 

@@ -1,28 +1,25 @@
-<div class="flex flex-col w-full h-full text-xl">
+<toolbar class="border-r border-r-lime-400">
+  <div class="flex w-full h-10  align-middle">
+    {{ appService.currentMovie$.value?.name }}
+  </div>
 
-  <toolbar class="border-r border-r-lime-400">
-    <div class="flex w-full h-10  align-middle">
-      {{ appService.currentMovie$.value?.name }}
-    </div>
-
-    <div class="flex flex-row gap-3.5">
-      <button class="w-3" (click)="funcGoHome()">На домашний экран</button>
-      <button class="w-3" (click)="funcOpenForm()">Добавить фильм</button>
-      <button class="w-3" (click)="funcDeleteFilm()">Удалить фильм</button>
-    </div>
-  </toolbar>
-  <span>
+  <div class="flex flex-row gap-3.5">
+    <button (click)="funcGoHome()" class="w-3">На домашний экран</button>
+    <button (click)="funcOpenForm()" class="w-3">Добавить фильм</button>
+    <button (click)="funcDeleteFilm()" class="w-3">Удалить фильм</button>
+  </div>
+</toolbar>
+<span>
   Про фильм:
 </span>
 
-  <ng-container *ngIf="appService.currentMovie$ | async; let movie">
-    <div *ngIf="movie.authorId">
-      {{ movie.authorId }}
-    </div>
+<ng-container *ngIf="appService.currentMovie$ | async; let movie">
+  <div *ngIf="movie.authorId">
+    {{ movie.authorId }}
+  </div>
 
-    <img [src]="href" alt="*"/>
-    <span class="text-lime-800 ">  {{ movie.description }}
+  <img [src]="href" alt="*"/>
+  <span class="text-lime-800 ">  {{ movie.description }}
   </span>
-  </ng-container>
-</div>
+</ng-container>
 

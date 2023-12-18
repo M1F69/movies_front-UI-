@@ -17,13 +17,12 @@ import {MoveContentComponent} from "../move-content/move-content.component";
   ],
   templateUrl: './move-list.component.html',
   host: {
-    class: 'flex h-full w-full '
+    class: 'flex flex-row'
   }
 })
 export class MoveListComponent {
   protected readonly http = inject(HttpClient);
   protected readonly appService = inject(AppService);
-
 
 
   constructor() {

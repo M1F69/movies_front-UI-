@@ -1,5 +1,6 @@
-
-<div class="flex flex-col w-[360px]">
-  <list class="bg-lime-100" [moveArray]="this.appService.movies" ></list>
+<div class="relative flex flex-col w-[360px]">
+  <div class="absolute inset-0 w-full h-full overflow-hidden">
+    <list [moveArray]="this.appService.movies" class="bg-lime-100"></list>
+  </div>
 </div>
 <move-content/>

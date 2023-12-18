@@ -11,12 +11,11 @@ import {MoveEntity} from "../../Entities/entity";
     NgForOf
   ],
   templateUrl: './list.component.html',
+  encapsulation: ViewEncapsulation.None,
   host: {
-    class: 'block w-full h-full',
-    style: 'display: flex'
-  },
-  encapsulation: ViewEncapsulation.None
+    class: 'flex h-[inherit]'
+  }
 })
 export class ListComponent {
-  @Input() declare moveArray:MoveEntity[]
+  @Input() declare moveArray: MoveEntity[]
 }
