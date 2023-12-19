@@ -26,6 +26,7 @@ export class MoveListComponent {
 
 
   constructor() {
+    console.log(this.appService.category)
     this.appService.loadMovies()
   }
 

@@ -25,7 +25,7 @@ const omitNil = (target: any): any =>
   templateUrl: './login-form.component.html',
   styleUrl: '../../style/ui/button.scss',
   host: {
-    class: '',
+    class: 'h-auto',
   },
 })
 export class LoginFormComponent {
@@ -36,23 +36,22 @@ export class LoginFormComponent {
   protected readonly router = inject(Router);
 
 
-
-  public user={
-  name: 'user',
-  pass: '123'
-}
+  public user = {
+    name: 'user',
+    pass: '123'
+  }
 
   protected formGroupLogin = new FormGroup({
-    name: new FormControl<string | null>(null,[Validators.required]),
-    pass: new FormControl<string | null>(null,[Validators.required]),
+    name: new FormControl<string | null>(null, [Validators.required]),
+    pass: new FormControl<string | null>(null, [Validators.required]),
   })
 
 
   protected formGroupRegister = new FormGroup({
-    NickName : new FormControl<string | null>(null,[Validators.required]),
-    Mail : new FormControl<string | null>(null,[Validators.required]),
-    FullName : new FormControl<string | null>(null,[Validators.required]),
-    Password : new FormControl<string | null>(null,[Validators.required]),
+    NickName: new FormControl<string | null>(null, [Validators.required]),
+    Mail: new FormControl<string | null>(null, [Validators.required]),
+    FullName: new FormControl<string | null>(null, [Validators.required]),
+    Password: new FormControl<string | null>(null, [Validators.required]),
   })
 
   public handleCancelClick() {
@@ -61,28 +60,33 @@ export class LoginFormComponent {
   }
 
   handleRegister() {
-    this.register=true
+    this.register = true
   }
 
   createUser() {
-      this.formGroupRegister.markAllAsTouched();
+    this.formGroupRegister.markAllAsTouched();
 
-      const XXX = omitNil(
-        this.formGroupRegister.getRawValue()
-      );
 
-      const ZZZ = new FormData();
-      ZZZ.append("NickName ", XXX['NickName'].toString())
-      ZZZ.append("Mail ", XXX['Mail'].toString())
-      ZZZ.append("FullName ", XXX['FullName'].toString())
-      ZZZ.append("Password ", XXX['Password'].toString())
+    const objForRest = {
+      NickName: this.formGroupRegister.getRawValue().NickName,
+      FullName: this.formGroupRegister.getRawValue().FullName,
+      Password: this.formGroupRegister.getRawValue().Password,
+      Mail: this.formGroupRegister.getRawValue().Mail,
+    };
 
-      this.http.post("/api/Users/", ZZZ).subscribe((x) => {
-        // respone
-        //this.register=false
-        ;})
-    this.register=false
 
+    this.http.post("/api/Users/", objForRest).subscribe({
+      next: value => {
+        this.register = false;
+      },
+      error: err => {
+        alert("Ошибка регистрации")
+      },
+    });
   }
+
+  backToLogin() {
+    this.register = false
   }
+}
 

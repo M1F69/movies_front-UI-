@@ -7,6 +7,7 @@ import {DialogService} from "../../common/dialog/src";
 import {AppService} from "../../app.service";
 import {CardElementComponent} from "../../common/card-element/card-element.component";
 import {Router} from "@angular/router";
+import {CatalogType} from "../../Entities/entity";
 
 @Component({
   selector: 'home',
@@ -41,11 +42,16 @@ export class HomeComponent {
   }
 
   openList(index: number) {
-    console.log(index);
+
+    this.appService.catalog.forEach((element)=>{
+      if(element.index ==index){
+        this.appService.category = element.trueTitle
+      }
+    })
+
 
     this.router.navigate(['list'])
-
-    //routing to list
   }
+
 }
 

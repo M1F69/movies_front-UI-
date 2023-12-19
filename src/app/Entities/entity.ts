@@ -36,6 +36,7 @@ export type GenreEnum = {
 export type CatalogType = {
   index:number,
   title:string,
+  trueTitle:string,
   url:string
 }
 

@@ -1,3 +1,9 @@
+
+
+body{
+  background-color: var(--customColor);
+}
+
 router-outlet.router-grow + * {
   display: flex;
   flex: 1 1 auto;
@@ -12,3 +18,125 @@ router-outlet.router-grow + * {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+//
+//
+//button {
+//  margin: 0;
+//
+//  position: relative;
+//
+//  height: 28px;
+//  min-width: 32px;
+//
+//  font-size: 12px;
+//  line-height: 20px;
+//
+//  width: initial;
+//  gap: 6px;
+//
+//  padding: 4px 8px;
+//
+//  display: inline-flex;
+//  flex-wrap: nowrap;
+//  flex-shrink: 0;
+//  align-items: center;
+//  justify-content: center;
+//
+//  cursor: pointer;
+//  text-decoration: none;
+//  text-align: center;
+//  white-space: nowrap;
+//  color: white;
+//
+//  outline: none;
+//  z-index: auto;
+//
+//  background-color: #547c0f;
+//
+//  border-width: 1px;
+//  border-style: solid;
+//  border-color: #547c0f;
+//  border-radius: 4px;
+//
+//  &.light{
+//    background-color: #d7f99d;
+//    border-color: #d7f99d;
+//    color: #547c0f;
+//
+//  }
+//
+//}
+//
+//
+//
+//img{
+//  width: 300px;
+//  height: 300px;
+//  min-width: 500px;
+//  min-height: 500px;
+//
+//}
+//
+//
+//
+//.toolbar {
+//  display: flex;
+//  justify-content: flex-start;
+//  align-items: center;
+//  padding-left: 0.75rem;
+//  padding-right: 0.75rem;
+//  border-bottom-style: solid;
+//  border-bottom-width: 1px;
+//  @apply border-b-lime-400  bg-lime-200 text-lime-800;
+//
+//  &-md {
+//    height: 3rem;
+//    min-height: 3rem;
+//  }
+//
+//  &-sm {
+//    height: 2.5rem;
+//    min-height: 2.5rem;
+//  }
+//}
+//
+//
+//@import '@angular/cdk/overlay-prebuilt.css';
+//
+//.v-dialog {
+//  @apply block w-full h-full max-w-max;
+//  @apply bg-white;
+//  max-height: calc(100dvh - (5dvh * 2));
+//  border-radius: 0.25rem;
+//  box-shadow: rgba(0, 0, 0, 0.05) 0px 0.0625rem 0.1875rem, rgba(0, 0, 0, 0.05) 0px 2.25rem 1.75rem -0.4375rem, rgba(0, 0, 0, 0.04) 0px 1.0625rem 1.0625rem -0.4375rem;
+//  form {
+//    min-height: min-content;
+//    overflow-y: auto;
+//  }
+//
+//  & > * {
+//    height: auto!important;
+//    @apply flex flex-col;
+//  }
+//  //&:first-child {
+//  //
+//  //}
+//}
+//
+//.v-overlay-backdrop {
+//  background-color: rgba(233, 236, 239, 0.55);
+//  backdrop-filter: blur(0.1875rem);
+//}
+//
+//.v-dialog-title {
+//  @apply -mx-5 mb-5 px-5 pb-5;
+//  @apply flex items-center space-x-2;
+//  @apply border-b;
+//}
+//
+//.v-dialog-actions {
+//  @apply -mx-5 mt-5 px-5 pt-5;
+//  @apply flex items-center justify-end space-x-2;
+//  @apply border-t;
+//}

@@ -15,4 +15,6 @@ import {MoveSpaceComponent} from "./components/move-space/move-space.component";
   }
 })
 export class AppComponent {
+  public customColor:string = '#d3dce6'
+  
 }
